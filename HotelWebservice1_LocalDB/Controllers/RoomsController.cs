@@ -16,6 +16,24 @@ namespace HotelWebservice1_LocalDB.Controllers
     {
         private HotelContext db = new HotelContext();
 
+
+        [Route("api/rooms/{room_Id:int}/{hotel_Id:int}/HotelRoom")]
+        [HttpGet]
+
+        ///ResponseType skal med da dette ikke er en liste IQuarable (LinQ til sql) liste..
+
+        [ResponseType(typeof(Room))]
+        public IHttpActionResult GetRoomByHotel(int room_Id, int hotel_Id)
+        {
+            Room room = db.Room.Where(x => x.Hotel_No.Equals(hotel_Id) && x.Room_No.Equals(room_Id)).FirstOrDefault();
+            if (room == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(room);
+        }
+
         // GET: api/Rooms
         public IQueryable<Room> GetRoom()
         {

@@ -16,6 +16,21 @@ namespace HotelWebservice1_LocalDB.Controllers
     {
         private HotelContext db = new HotelContext();
 
+        /// <summary>
+        /// Henter en specifik gæst:
+        /// </summary>
+        /// <returns></returns>
+
+        [Route("api/Bookings/{GuestNo:int}/Guests")]
+
+        [HttpGet]
+
+        public IQueryable<Booking> GetBookingByGuestId(int GuestNo)
+        {
+            return db.Booking.Where(x => x.Guest_No.Equals(GuestNo));
+        }
+
+
         // GET: api/Bookings
         public IQueryable<Booking> GetBooking()
         {
