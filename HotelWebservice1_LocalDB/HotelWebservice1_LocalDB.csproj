@@ -196,6 +196,7 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Booking.cs" />
     <Compile Include="Controllers\BookingsController.cs" />
+    <Compile Include="Controllers\GuestBookRsController.cs" />
     <Compile Include="Controllers\GuestsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HotelRoomViewsController.cs" />
@@ -207,6 +208,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Guest.cs" />
+    <Compile Include="GuestBookR.cs" />
+    <Compile Include="GuestBookRoomViewContext.cs" />
     <Compile Include="Hotel.cs" />
     <Compile Include="HotelContext.cs" />
     <Compile Include="HotelRoomView.cs" />
